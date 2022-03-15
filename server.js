@@ -2,9 +2,9 @@ var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var url = require("url");
-var bodyParser = require('express-xml-bodyparser');
+var bodyParser = require('body-parser');
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 var clientResponseRef;
 app.get('/*', (req, res) => {
